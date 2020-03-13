@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JSONP获取数据不通过 ajax</h1>
+    <h2>不通过 ajax，就不受同源限制</h2>
+    <h3>发请求的时候直接使用 script 标签</h3>
+    <script>
+        // 预先定义一个函数
+        window.fn = function(response){
+            console.log(response);
+        }
+    </script>
+    <!-- script 用于发请求，不涉及 ajax -->
+    <!-- 请求成功后，服务端返回 JSONP 格式数据, 函数名(JSON数据) -->
+    <script src="http://127.0.0.1:3000/list"></script>
+</body>
+</html>
